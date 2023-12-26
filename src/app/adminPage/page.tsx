@@ -75,7 +75,7 @@ const AdminPage = () => {
           <div>No Properties Added</div>
         ) : (
           <div className=" flex flex-wrap justify-between gap-10">
-            {homes.map((p, index) => {
+            {homes.map((p: any, index: number) => {
               return (
                 <>
                   <PropertyCard
