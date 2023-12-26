@@ -11,7 +11,7 @@ import Navigation from "@/components/Navigation";
 const AdminPage = () => {
   const [addPropertyModal, setAddPropertyModal] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
-  const [properties, setProperties] = useState([]);
+  const [homes, setHomes] = useState([]);
   {
     /* TODO: Create Add Property Page
             TODO: Create Add Team Member Page
@@ -43,12 +43,12 @@ const AdminPage = () => {
 
   const getProperties = () => {
     propertiesRef.onSnapshot((snapshot) => {
-      let properties = snapshot.docs.map((doc) => {
+      let homes = snapshot.docs.map((doc) => {
         let data = doc.data();
         let id = doc.id;
         return { id, ...data };
       });
-      setProperties(properties);
+      setHomes(homes);
     });
   };
 
@@ -71,11 +71,11 @@ const AdminPage = () => {
             Add Property
           </button>
         </div>
-        {properties.length === 0 ? (
+        {homes.length === 0 ? (
           <div>No Properties Added</div>
         ) : (
           <div className=" flex flex-wrap justify-between gap-10">
-            {properties.map((p, index) => {
+            {homes.map((p, index) => {
               return (
                 <>
                   <PropertyCard
