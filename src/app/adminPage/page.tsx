@@ -11,7 +11,7 @@ import Navigation from "@/components/Navigation";
 const AdminPage = () => {
   const [addPropertyModal, setAddPropertyModal] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
-  const [homes, setHomes] = useState([]);
+  const [homes, setHomes] = useState([] as any);
   {
     /* TODO: Create Add Property Page
             TODO: Create Add Team Member Page
