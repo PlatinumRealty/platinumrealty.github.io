@@ -8,7 +8,7 @@ import { db } from "@/firebase/config";
 import Footer from "@/components/Footer";
 
 const Properties = () => {
-  const [properties, setProperties] = useState([]);
+  const [properties, setProperties] = useState<any[]>([]);
   const propertiesRef = db.collection("properties");
 
   const getProperties = () => {

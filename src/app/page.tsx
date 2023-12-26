@@ -7,8 +7,8 @@ import { ArrowRight } from "react-feather";
 import useIsVisble from "../customHooks/useIsVisible";
 
 export default function Home() {
-  const [properties, setProperties] = useState([]);
-  const [teamMembers, setTeamMembers] = useState([]);
+  const [properties, setProperties] = useState<any[]>([]);
+  const [teamMembers, setTeamMembers] = useState<any[]>([]);
 
   const ref1 = useRef();
   const view1 = useIsVisble(ref1);
