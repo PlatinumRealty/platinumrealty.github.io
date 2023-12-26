@@ -5,7 +5,7 @@ import { auth } from "@/firebase/config";
 import Image from "next/image";
 import logo from "../../assets/editedLogo.png";
 
-const Navigation = () => {
+const Navigation = ({ role }) => {
   const router = useRouter();
   const handleSignOut = () => {
     // firebase sign out here
