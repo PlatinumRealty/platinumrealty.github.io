@@ -21,7 +21,7 @@ import CarouselContainer from "@/components/carousel/CarouselContainer";
 export default function Home() {
   const [properties, setProperties] = useState([]);
   const [teamMembers, setTeamMembers] = useState([]);
-
+  //comment
   const ref1 = useRef();
   const view1 = useIsVisble(ref1);
 
