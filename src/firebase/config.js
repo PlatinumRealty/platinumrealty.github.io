@@ -21,14 +21,14 @@ if (!firebase.apps.length) {
 
 const db = firebase.firestore();
 
-const auth = firebase.auth();
+// const auth = firebase.auth();
 const storage = getStorage();
 
 let uid;
-auth.onAuthStateChanged((user) => {
-  if (user) {
-    uid = user.uid;
-  }
-});
+// auth.onAuthStateChanged((user) => {
+//   if (user) {
+//     uid = user.uid;
+//   }
+// });
 
-export { db, auth, uid, storage };
+export { db, uid, storage };
