@@ -1,9 +1,7 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 import Image from "next/image";
-
 import imgOne from "../../../assets/1.jpg";
 import imgTwo from "../../../assets/2.jpg";
 import imgThree from "../../../assets/3.jpg";
