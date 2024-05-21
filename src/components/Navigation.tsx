@@ -27,7 +27,6 @@ const Navigation = ({ role }) => {
 
     window.open(mailtoUrl, "_blank");
   };
-
   const navLinks = [
     {
       name: "Property",
