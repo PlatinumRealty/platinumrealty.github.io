@@ -1,7 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
-import { db } from "@/firebase/config";
+// import { db } from "@/firebase/config";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "react-feather";
 import { Carousel } from "react-responsive-carousel";
@@ -19,8 +19,8 @@ import propPic from "../../assets/Property Acquisitions Pic.jpg";
 import CarouselContainer from "@/components/carousel/CarouselContainer";
 
 export default function Home() {
-  const [properties, setProperties] = useState([]);
-  const [teamMembers, setTeamMembers] = useState([]);
+  // const [properties, setProperties] = useState([]);
+  // const [teamMembers, setTeamMembers] = useState([]);
   //comment
   const ref1 = useRef();
   const view1 = useIsVisble(ref1);
@@ -38,36 +38,36 @@ export default function Home() {
   const ref6 = useRef();
   const view6 = useIsVisble(ref6);
 
-  const propertiesRef = db.collection("properties");
-  const teamRef = db.collection("team");
+  // const propertiesRef = db.collection("properties");
+  // const teamRef = db.collection("team");
 
-  const getProperties = () => {
-    propertiesRef.limit(4).onSnapshot((snapshot) => {
-      let properties = snapshot.docs.map((doc) => {
-        let data = doc.data();
-        let id = doc.id;
-        return { id, ...data };
-      });
+  // const getProperties = () => {
+  //   propertiesRef.limit(4).onSnapshot((snapshot) => {
+  //     let properties = snapshot.docs.map((doc) => {
+  //       let data = doc.data();
+  //       let id = doc.id;
+  //       return { id, ...data };
+  //     });
 
-      setProperties(properties);
-    });
-  };
+  //     setProperties(properties);
+  //   });
+  // };
 
-  const getTeamMembers = () => {
-    teamRef.limit(4).onSnapshot((snapshot) => {
-      let teamData = snapshot.docs.map((doc) => {
-        const data = doc.data();
-        const id = doc.id;
-        return { id, ...data };
-      });
-      setTeamMembers(teamData);
-    });
-  };
+  // const getTeamMembers = () => {
+  //   teamRef.limit(4).onSnapshot((snapshot) => {
+  //     let teamData = snapshot.docs.map((doc) => {
+  //       const data = doc.data();
+  //       const id = doc.id;
+  //       return { id, ...data };
+  //     });
+  //     setTeamMembers(teamData);
+  //   });
+  // };
 
-  useEffect(() => {
-    getProperties();
-    getTeamMembers();
-  }, []);
+  // useEffect(() => {
+  //   getProperties();
+  //   getTeamMembers();
+  // }, []);
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-black text-[#ffc107]  md:px-20">

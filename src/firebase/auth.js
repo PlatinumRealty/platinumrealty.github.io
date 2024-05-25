@@ -1,4 +1,4 @@
-import { auth, db, uid } from "../firebase/config";
+import { db, uid } from "../firebase/config";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -9,14 +9,14 @@ export const signUp = async (email, password) => {
   let error = null;
 
   try {
-    result = await createUserWithEmailAndPassword(auth, email, password).then(
-      () => {
-        const usersRef = db.collection("users").doc(uid);
-        usersRef.set({
-          email,
-        });
-      }
-    );
+    // result = await createUserWithEmailAndPassword(auth, email, password).then(
+    //   () => {
+    //     const usersRef = db.collection("users").doc(uid);
+    //     usersRef.set({
+    //       email,
+    //     });
+    //   }
+    // );
   } catch (e) {
     error = e;
   }
@@ -28,7 +28,7 @@ export const login = async (email, password) => {
   let error = null;
 
   try {
-    result = await signInWithEmailAndPassword(auth, email, password);
+    // result = await signInWithEmailAndPassword(auth, email, password);
   } catch (e) {
     error = e;
     console.log(e);

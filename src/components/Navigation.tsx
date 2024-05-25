@@ -1,16 +1,16 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { auth } from "@/firebase/config";
+// import { auth } from "@/firebase/config";
 import Image from "next/image";
 import logo from "../../assets/editedLogo.png";
 
 const Navigation = ({ role }) => {
   const router = useRouter();
-  const handleSignOut = () => {
-    // firebase sign out here
-    auth.signOut().then(() => router.push("/"));
-  };
+  // const handleSignOut = () => {
+  //   // firebase sign out here
+  //   auth.signOut().then(() => router.push("/"));
+  // };
 
   const handleContact = () => {
     var email = "jmccuff2300@gmail.com";
@@ -28,34 +28,34 @@ const Navigation = ({ role }) => {
     window.open(mailtoUrl, "_blank");
   };
   const navLinks = [
-    {
-      name: "Property",
-      route: "/properties",
-    },
-    {
-      name: "Team",
-      route: "/teamMembers",
-    },
+    // {
+    //   name: "Property",
+    //   route: "/properties",
+    // },
+    // {
+    //   name: "Team",
+    //   route: "/teamMembers",
+    // },
     {
       name: "Contact",
       route: () => handleContact(),
     },
   ];
   //test
-  const adminNavLinks = [
-    {
-      name: "Properties",
-      route: "/adminPage",
-    },
-    {
-      name: "Team",
-      route: "/team",
-    },
-    {
-      name: "Sign Out",
-      signOut: () => handleSignOut(),
-    },
-  ];
+  // const adminNavLinks = [
+  //   {
+  //     name: "Properties",
+  //     route: "/adminPage",
+  //   },
+  //   {
+  //     name: "Team",
+  //     route: "/team",
+  //   },
+  //   {
+  //     name: "Sign Out",
+  //     signOut: () => handleSignOut(),
+  //   },
+  // ];
   // comment
   if (!role) {
     return (
@@ -70,7 +70,7 @@ const Navigation = ({ role }) => {
             }}
           />
         </div>
-        <div className="w-1/3 flex justify-between">
+        {/* <div className="w-1/3 flex justify-between">
           {adminNavLinks.map((link) => {
             return link.name === "Sign Out" ? (
               <button
@@ -86,7 +86,7 @@ const Navigation = ({ role }) => {
               </Link>
             );
           })}
-        </div>
+        </div> */}
       </div>
     );
   }
